@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 function Player(isComputer, gamePiece) {
     const isCPU = isComputer,
         token = gamePiece;
@@ -16,4 +18,33 @@ function Player(isComputer, gamePiece) {
     };
 }
 
-export { Player };
+
+function ComputerPlayer(gamePiece) {
+    Player.call(this, true, gamePiece);
+    // const MOVE_DELAY = 2000;
+    // const $gameContainer = $('.game-container');
+    this.gameObject = null;
+    this.setGameObject = (gameObject) => {
+        this.gameObject = gameObject;
+    };
+    this.makeMove = () => {
+        const possibleMoves = this.gameObject.getBoard().reduce((acc, row, y) => {
+            let openCells = row.reduce((cells, cell, x) => {
+                if(cell === null) {
+                    cells.push([x,y]);
+                }
+                return cells;
+            }, []);
+            return acc.concat(openCells);
+        }, []);
+        const move = possibleMoves[ Math.floor(Math.random() * possibleMoves.length) ];
+        setTimeout(() => {
+            this.gameObject.makeMove(this, move[0], move[1]);
+        }, 2000);
+    };
+}
+ComputerPlayer.prototype = Object.create(Player.prototype);
+ComputerPlayer.prototype.constructor = ComputerPlayer;
+
+
+export { Player, ComputerPlayer };

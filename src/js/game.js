@@ -10,27 +10,31 @@ function Game(playersArray, scoreboardObject) {
         isGameOver;
     // Cache DOM
     const $gameTiles = $('.game-board__tile'),
+        $gameContainer = $('.game-container'),
         $innerWrapper = $('.board-overlay'),
         $overlayText = $('.js-overlay-text');
-
-    this.initializeGame = () => {
-        $.each($gameTiles, (index, el) => {
-            $(el).on('click', () => {
+    // Bind events
+    $.each($gameTiles, (index, el) => {
+        $(el).on('click', () => {
+            // don't do anything if not player's turn against CPU
+            if( (!players[0].isCPU() && !players[1].isCPU()) ||
+                (players[1].isCPU() && currentPlayer === 0) ) {
                 let col = index % 3;
                 let row = Math.floor(index / 3);
                 this.makeMove(players[currentPlayer], col, row);
-            });
+            }
         });
+    });
 
-        currentPlayer = Math.round(Math.random());
+    this.initializeGame = () => {
         isGameOver = false;
         board = [
             [null, null, null],
             [null, null, null],
             [null, null, null]
         ];
-
         this.render();
+        this.nextPlayer( Math.round(Math.random()) );
     };
 
     this.makeMove = (player, x, y) => {
@@ -42,7 +46,7 @@ function Game(playersArray, scoreboardObject) {
             if(isGameOver) {
                 this.endGame(winningToken);
             } else {
-                currentPlayer = (currentPlayer + 1) % 2;
+                this.nextPlayer( (currentPlayer + 1) % 2 );
             }
         }
     };
@@ -122,9 +126,22 @@ function Game(playersArray, scoreboardObject) {
             [null, null, null],
             [null, null, null]
         ];
-        currentPlayer = Math.round(Math.random());
+        this.nextPlayer( Math.round(Math.random()) );
         this.render();
         isGameOver = false;
+    };
+
+    this.nextPlayer = (index) => {
+        currentPlayer = index;
+        $gameContainer.trigger('nextPlayerTurn');
+    };
+
+    this.getCurrentPlayer = () => {
+        return currentPlayer;
+    };
+
+    this.getBoard = () => {
+        return board;
     };
 
 }
