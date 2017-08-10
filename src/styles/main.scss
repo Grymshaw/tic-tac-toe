@@ -7,10 +7,20 @@
     z-index: 1;
     background: rgba(0,0,0,0.8);
     color: #fff;
-    text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.overlay-text {
+    width: 100%;
+    text-align: center;
+}
+.overlay__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
 }
 .game-board {
     position: relative;

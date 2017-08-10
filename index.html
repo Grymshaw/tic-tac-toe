@@ -11,7 +11,7 @@
             <span class="mode-select__option js-select-2p">2 Player</span>
         </div>
 
-        <div class="token-select hidden">
+        <div class="token-select">
             <h3 class="token-select__header">P1 Token Select:</h3>
             <span class="token-select__option js-select-x">X</span>
             <span class="token-select__option js-select-o">O</span>
@@ -28,8 +28,14 @@
 
             <div class="game-board">
                 <div class="board-overlay hidden">
-                    Game Over!<br/>
-                    Player 1 Wins
+                    <div class="overlay-text js-overlay-text">
+                        Game Over!<br/>
+                        Player 1 Wins
+                    </div>
+                    <div class="overlay__buttons js-overlay-buttons">
+                        <a class="overlay-button overlay-button--reset js-reset-button">Play Again</a>
+                        <a class="overlay-button overlay-button--quit js-quit-button">Quit</a>
+                    </div>
                 </div>
                 <div class="game-board__tile top-left">
                 </div>

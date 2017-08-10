@@ -8,6 +8,9 @@ function Player(isComputer, gamePiece) {
     this.incrementWins = () => {
         wins += 1;
     };
+    this.isCPU = () => {
+        return isCPU;
+    };
     this.getToken = () => {
         return token;
     };
