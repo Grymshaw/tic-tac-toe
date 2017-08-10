@@ -82,13 +82,10 @@ function Game(playersArray, scoreboardObject) {
         }
 
         if(isDraw) {
-            console.log('draw');
             winningToken = ' ';
         }
-
         if(winningToken) {
             isGameOver = true;
-            console.log(winningToken);
         }
         return winningToken;
     };
@@ -115,7 +112,7 @@ function Game(playersArray, scoreboardObject) {
         // Increment winner's score
         if (players[0].getToken() === token)
             players[0].incrementWins();
-        else
+        else if (players[1].getToken() === token)
             players[1].incrementWins();
         scoreboard.render();
     };
