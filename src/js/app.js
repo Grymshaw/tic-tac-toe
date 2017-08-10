@@ -9,7 +9,9 @@ import { Scoreboard } from "./scoreboard.js";
     // Cache DOM
     const $resetButton = $('.js-reset-button');
     const $quitButton = $('.js-quit-button');
-    const $gameContainer = $('.game-container');
+    const $modeSelect = $('.js-mode-select');
+    const $tokenSelect = $('.js-token-select');
+    const $gameContainer = $('.js-game-container');
     const $selectSinglePlayer = $('.js-select-1p');
     const $selectTwoPlayer = $('.js-select-2p');
     const $chooseX = $('.js-select-x');
@@ -36,21 +38,29 @@ import { Scoreboard } from "./scoreboard.js";
     $selectSinglePlayer.on('click', () => {
         console.log('1P mode');
         isSinglePlayer = true;
+        $modeSelect.addClass('hidden');
+        $tokenSelect.removeClass('hidden');
     });
     $selectTwoPlayer.on('click', () => {
         console.log('2P mode');
         isSinglePlayer = false;
+        $modeSelect.addClass('hidden');
+        $tokenSelect.removeClass('hidden');
     });
     $chooseX.on('click', () => {
         console.log('X chosen');
         playerOneToken = 'X';
         playerTwoToken = 'O';
+        $tokenSelect.addClass('hidden');
+        $gameContainer.removeClass('hidden');
         setupGame();
     });
     $chooseO.on('click', () => {
         console.log('O chosen');
         playerOneToken = 'O';
         playerTwoToken = 'X';
+        $tokenSelect.addClass('hidden');
+        $gameContainer.removeClass('hidden');
         setupGame();
     });
     $resetButton.on('click', () => {

@@ -1,0 +1,21 @@
+.select {
+    width: 100%;
+}
+.select__header {
+    width: 100%;
+    text-align: center;
+}
+.select__options {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select__option {
+    margin: 0 15px;
+    &:hover {
+        cursor: pointer;
+        color: darkgrey;
+    }
+}

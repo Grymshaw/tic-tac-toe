@@ -21,7 +21,7 @@ function Player(isComputer, gamePiece) {
 
 function ComputerPlayer(gamePiece) {
     Player.call(this, true, gamePiece);
-    // const MOVE_DELAY = 2000;
+    const MOVE_DELAY = 750;
     // const $gameContainer = $('.game-container');
     this.gameObject = null;
     this.setGameObject = (gameObject) => {
@@ -40,7 +40,7 @@ function ComputerPlayer(gamePiece) {
         const move = possibleMoves[ Math.floor(Math.random() * possibleMoves.length) ];
         setTimeout(() => {
             this.gameObject.makeMove(this, move[0], move[1]);
-        }, 2000);
+        }, MOVE_DELAY);
     };
 }
 ComputerPlayer.prototype = Object.create(Player.prototype);

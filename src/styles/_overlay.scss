@@ -1,0 +1,31 @@
+.board-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.overlay-text {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.overlay__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.overlay-button {
+    &:hover {
+        color: lightgrey;
+        cursor: pointer;
+    }
+}

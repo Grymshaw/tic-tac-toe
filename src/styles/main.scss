@@ -1,84 +1,20 @@
-.board-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.overlay-text {
-    width: 100%;
-    text-align: center;
-}
-.overlay__buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-}
-.game-board {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.game-board__tile {
-    display: block;
-    box-sizing: border-box;
-    margin: 0;
-    width: 33.33333%;
-    height: 33.33333%;
-}
-.top-left {
-    border-right: 2px solid;
-    border-bottom: 2px solid;
-}
-.top-mid {
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
-}
-.top-right {
-    border-left: 2px solid;
-    border-bottom: 2px solid;
-}
-.mid-left {
-    border-right: 2px solid;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-}
-.mid-mid {
-    border: 2px solid;
-}
-.mid-right {
-    border-left: 2px solid;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-}
-.bot-left {
-    border-right: 2px solid;
-    border-top: 2px solid;
-}
-.bot-mid {
-    border-top: 2px solid;
-    border-left: 2px solid;
-    border-right: 2px solid;
-}
-.bot-right {
-    border-left: 2px solid;
-    border-top: 2px solid;
-}
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+//Component stylesheets
+@import 'gameboard';
+@import 'game-view';
+@import 'mode-select';
+@import 'overlay';
+@import 'player-select';
+@import 'scoreboard';
 
+body {
+    font-family: 'Indie Flower', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+//Utility classes
 .hidden {
     display: none;
 }

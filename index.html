@@ -5,28 +5,35 @@
     </head>
     <body>
 
-        <div class="mode-select">
-            <h3 class="mode-select__header">Choose your game mode:</h3>
-            <span class="mode-select__option js-select-1p">1 Player</span>
-            <span class="mode-select__option js-select-2p">2 Player</span>
-        </div>
-
-        <div class="token-select">
-            <h3 class="token-select__header">P1 Token Select:</h3>
-            <span class="token-select__option js-select-x">X</span>
-            <span class="token-select__option js-select-o">O</span>
-        </div>
-
-        <div class="game-container">
-
-            <div class="turn-indicator js-turn-indicator-p1">
-                Player 1's turn
+        <div class="game-view">
+            <!-- Mode Selection -->
+            <div class="select js-mode-select">
+                <h3 class="select__header mode-select__header">Choose your game mode:</h3>
+                <div class="select__options mode-select__options">
+                    <span class="select__option mode-select__option js-select-1p">1 Player</span>
+                    <span class="select__option mode-select__option js-select-2p">2 Player</span>
+                </div>
             </div>
-            <div class="turn-indicator js-turn-indicator-p2">
-                Player 2's turn
+            <!-- Token Selection -->
+            <div class="select js-token-select hidden">
+                <h3 class="select__header token-select__header">P1 Token Select:</h3>
+                <div class="select__options token-select__options">
+                    <span class="select__option token-select__option js-select-x">X</span>
+                    <span class="select__option token-select__option js-select-o">O</span>
+                </div>
             </div>
-
-            <div class="game-board">
+            <!-- Game Container -->
+            <div class="game-container js-game-container hidden">
+                <!-- Turn Indicator -->
+                <div class="turn-indicators hidden">
+                    <div class="turn-indicator js-turn-indicator-p1">
+                        Player 1's turn
+                    </div>
+                    <div class="turn-indicator js-turn-indicator-p2">
+                        Player 2's turn
+                    </div>
+                </div>
+                <!-- Overlay -->
                 <div class="board-overlay hidden">
                     <div class="overlay-text js-overlay-text">
                         Game Over!<br/>
@@ -37,41 +44,39 @@
                         <a class="overlay-button overlay-button--quit js-quit-button">Quit</a>
                     </div>
                 </div>
-                <div class="game-board__tile top-left">
-                </div>
-                <div class="game-board__tile top-mid">
-                </div>
-                <div class="game-board__tile top-right">
-                </div>
-                <div class="game-board__tile mid-left">
-                </div>
-                <div class="game-board__tile mid-mid">
-                </div>
-                <div class="game-board__tile mid-right">
-                </div>
-                <div class="game-board__tile bot-left">
-                </div>
-                <div class="game-board__tile bot-mid">
-                </div>
-                <div class="game-board__tile bot-right">
-                </div>
-            </div>
-
-            <div class="game-scoreboard">
-                <h3 class="scoreboard__header">Scoreboard</h3>
-                <div class="scoreboard__section js-p1-scoreboard">
-                    <h4 class="scoreboard__player-name js-p1-name">You</h4>
-                    <div class="scoreboard__player-score js-p1-score">
-                        4
+                <!-- Game Board -->
+                <div class="game-board">
+                    <div class="game-board__tile top-left">
+                    </div>
+                    <div class="game-board__tile top-mid">
+                    </div>
+                    <div class="game-board__tile top-right">
+                    </div>
+                    <div class="game-board__tile mid-left">
+                    </div>
+                    <div class="game-board__tile mid-mid">
+                    </div>
+                    <div class="game-board__tile mid-right">
+                    </div>
+                    <div class="game-board__tile bot-left">
+                    </div>
+                    <div class="game-board__tile bot-mid">
+                    </div>
+                    <div class="game-board__tile bot-right">
                     </div>
                 </div>
-                <div class="scoreboard__section js-p2-scoreboard">
-                    <h4 class="scoreboard__player-name js-p2-name">PC</h4>
-                    <div class="scoreboard__player-score js-p2-score">
-                        7
+                <!-- Scoreboard -->
+                <div class="scoreboard">
+                    <h3 class="scoreboard__header">Scoreboard</h3>
+                    <div class="scoreboard__section js-p1-scoreboard">
+                        <h4 class="scoreboard__player-name js-p1-name"></h4>
+                        <div class="scoreboard__player-score js-p1-score"></div>
+                    </div>
+                    <div class="scoreboard__section js-p2-scoreboard">
+                        <h4 class="scoreboard__player-name js-p2-name"></h4>
+                        <div class="scoreboard__player-score js-p2-score"></div>
                     </div>
                 </div>
-                
             </div>
         </div>
 
