@@ -7,6 +7,7 @@
 @import 'overlay';
 @import 'player-select';
 @import 'scoreboard';
+@import 'turn-indicators';
 
 body {
     font-family: 'Indie Flower', cursive;
@@ -16,5 +17,6 @@ body {
 }
 //Utility classes
 .hidden {
+    opacity: 0;
     display: none;
 }

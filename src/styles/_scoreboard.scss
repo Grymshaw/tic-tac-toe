@@ -1,5 +1,18 @@
 .scoreboard {
+    font-size: 1.5rem;
     width: 30%;
     text-align: center;
     align-self: flex-start;
+}
+.scoreboard__header {
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+}
+.scoreboard__player-name {
+    margin: 0;
+}
+.scoreboard__section {
+    &:nth-child(2) {
+        margin-bottom: 10px;
+    }
 }

@@ -11,12 +11,13 @@
                 <h3 class="select__header mode-select__header">Choose your game mode:</h3>
                 <div class="select__options mode-select__options">
                     <span class="select__option mode-select__option js-select-1p">1 Player</span>
+                    ||
                     <span class="select__option mode-select__option js-select-2p">2 Player</span>
                 </div>
             </div>
             <!-- Token Selection -->
-            <div class="select js-token-select hidden">
-                <h3 class="select__header token-select__header">P1 Token Select:</h3>
+            <div class="select token-select js-token-select hidden">
+                <h3 class="select__header token-select__header">Player 1 Token Select:</h3>
                 <div class="select__options token-select__options">
                     <span class="select__option token-select__option js-select-x">X</span>
                     <span class="select__option token-select__option js-select-o">O</span>
@@ -25,23 +26,20 @@
             <!-- Game Container -->
             <div class="game-container js-game-container hidden">
                 <!-- Turn Indicator -->
-                <div class="turn-indicators hidden">
-                    <div class="turn-indicator js-turn-indicator-p1">
+                <div class="turn-indicators">
+                    <div class="turn-indicator turn-indicator--p1 js-turn-indicator-p1 hidden">
                         Player 1's turn
                     </div>
-                    <div class="turn-indicator js-turn-indicator-p2">
+                    <div class="turn-indicator turn-indicator--p1 js-turn-indicator-p2 hidden">
                         Player 2's turn
                     </div>
                 </div>
                 <!-- Overlay -->
-                <div class="board-overlay hidden">
-                    <div class="overlay-text js-overlay-text">
-                        Game Over!<br/>
-                        Player 1 Wins
-                    </div>
+                <div class="board-overlay js-board-overlay hidden">
+                    <div class="overlay-text js-overlay-text"></div>
                     <div class="overlay__buttons js-overlay-buttons">
-                        <a class="overlay-button overlay-button--reset js-reset-button">Play Again</a>
-                        <a class="overlay-button overlay-button--quit js-quit-button">Quit</a>
+                        <a class="overlay-button overlay-button--reset js-reset-button">Play Again?</a>
+                        <!-- <a class="overlay-button overlay-button--quit js-quit-button">Quit</a> -->
                     </div>
                 </div>
                 <!-- Game Board -->

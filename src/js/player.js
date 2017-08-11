@@ -4,6 +4,9 @@ function Player(isComputer, gamePiece) {
     const isCPU = isComputer,
         token = gamePiece;
     let wins = 0;
+    this.setWins = (numWins) => {
+        wins = numWins;
+    };
     this.getWins = () => {
         return wins;
     };

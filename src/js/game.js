@@ -11,7 +11,7 @@ function Game(playersArray, scoreboardObject) {
     // Cache DOM
     const $gameTiles = $('.game-board__tile'),
         $gameContainer = $('.game-container'),
-        $innerWrapper = $('.board-overlay'),
+        $innerWrapper = $('.js-board-overlay'),
         $overlayText = $('.js-overlay-text');
     // Bind events
     $.each($gameTiles, (index, el) => {

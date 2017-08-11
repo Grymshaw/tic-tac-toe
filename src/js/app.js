@@ -12,10 +12,13 @@ import { Scoreboard } from "./scoreboard.js";
     const $modeSelect = $('.js-mode-select');
     const $tokenSelect = $('.js-token-select');
     const $gameContainer = $('.js-game-container');
+    const $innerWrapper = $('.js-board-overlay');
     const $selectSinglePlayer = $('.js-select-1p');
     const $selectTwoPlayer = $('.js-select-2p');
     const $chooseX = $('.js-select-x');
     const $chooseO = $('.js-select-o');
+    const turnIndicatorP1 = $('.js-turn-indicator-p1');
+    const turnIndicatorP2 = $('.js-turn-indicator-p2');
 
     // Initialize Variables
     let isSinglePlayer;
@@ -29,26 +32,28 @@ import { Scoreboard } from "./scoreboard.js";
     //Bind button events
     $gameContainer.on('nextPlayerTurn', () => {
         let currentPlayer = game.getCurrentPlayer();
-        console.log('Next player\'s turn');
-        console.log('current player: ' + currentPlayer);
+        if(currentPlayer === 0) {
+            turnIndicatorP1.removeClass('hidden');
+            turnIndicatorP2.addClass('hidden');
+        } else {
+            turnIndicatorP1.addClass('hidden');
+            turnIndicatorP2.removeClass('hidden');
+        }
         if(p2.isCPU() && currentPlayer === 1) {
             p2.makeMove();
         }
     });
     $selectSinglePlayer.on('click', () => {
-        console.log('1P mode');
         isSinglePlayer = true;
         $modeSelect.addClass('hidden');
         $tokenSelect.removeClass('hidden');
     });
     $selectTwoPlayer.on('click', () => {
-        console.log('2P mode');
         isSinglePlayer = false;
         $modeSelect.addClass('hidden');
         $tokenSelect.removeClass('hidden');
     });
     $chooseX.on('click', () => {
-        console.log('X chosen');
         playerOneToken = 'X';
         playerTwoToken = 'O';
         $tokenSelect.addClass('hidden');
@@ -56,7 +61,6 @@ import { Scoreboard } from "./scoreboard.js";
         setupGame();
     });
     $chooseO.on('click', () => {
-        console.log('O chosen');
         playerOneToken = 'O';
         playerTwoToken = 'X';
         $tokenSelect.addClass('hidden');
@@ -66,6 +70,12 @@ import { Scoreboard } from "./scoreboard.js";
     $resetButton.on('click', () => {
         game.resetGame();
     });
+    // $quitButton.on('click', () => {
+    //     setupGame();
+    //     $innerWrapper.addClass('hidden');
+    //     $gameContainer.addClass('hidden');
+    //     $modeSelect.removeClass('hidden');
+    // });
 
 
 
